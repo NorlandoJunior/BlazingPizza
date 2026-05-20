@@ -1,5 +1,11 @@
 using BlazingPizza.Data;
 using BlazingPizza.Services;
+using System.Globalization;
+
+var culture = new CultureInfo("pt-BR");
+
+CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentUICulture = culture;
 
 
 var builder = WebApplication.CreateBuilder(args);
