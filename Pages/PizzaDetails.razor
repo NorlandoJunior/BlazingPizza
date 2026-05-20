@@ -1,0 +1,12 @@
+@page "/pizza/{PizzaName}"
+
+<h1>Pizza Details</h1>
+
+<p>You selected: @PizzaName</p>
+
+@code {
+
+    [Parameter]
+    public string PizzaName { get; set; }
+
+}

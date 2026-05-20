@@ -1,0 +1,28 @@
+@page "/favoritepizza/{favorite?}"
+@page "/favoritesize/{size:int}"
+
+<h1>Choose a Pizza</h1>
+
+@if (Size > 0)
+{
+    <p>Your favorite pizza size is: @Size inches.</p>
+}
+else
+{
+    <p>Your favorite pizza is: @Favorite</p>
+}
+
+@code {
+
+    [Parameter]
+    public string Favorite { get; set; }
+
+    [Parameter]
+    public int Size { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Favorite ??= "Margherita";
+    }
+
+}
