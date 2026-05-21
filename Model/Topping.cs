@@ -10,8 +10,8 @@
 
         public string GetFormattedPrice()
         {
-            var pt = System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR");
-            return $"R$ {Price.ToString("N2", pt)}";
+           var pt = System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR");
+           return Price.ToString("C", pt); 
         }
     }
 }

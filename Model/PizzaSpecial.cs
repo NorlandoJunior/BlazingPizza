@@ -18,7 +18,7 @@
         public string GetFormattedBasePrice()
         {
             var pt = System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR");
-            return $"R$ {BasePrice.ToString("N2", pt)}";
+            return BasePrice.ToString("C", pt); 
         }
     }
 }

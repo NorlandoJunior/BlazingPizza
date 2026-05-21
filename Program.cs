@@ -2,12 +2,12 @@ using BlazingPizza.Data;
 using BlazingPizza.Services;
 using System.Globalization;
 
+// 1. Define a cultura global para pt-BR antes de buildar o app
 var culture = new CultureInfo("pt-BR");
-
 CultureInfo.DefaultThreadCurrentCulture = culture;
 CultureInfo.DefaultThreadCurrentUICulture = culture;
 
-
+// 2. Builda o app
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
@@ -30,6 +30,7 @@ app.MapRazorPages();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+
 // Initialize the database
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 using (var scope = scopeFactory.CreateScope())
